@@ -1,8 +1,8 @@
 # sbt-angular-seed: SBT Plugin for creating seeds for AngularJS
 
 [sbt-angular-seed] is a SBT plugin designed to create seed data in the form of an [AngularJS] module. Note that this plugin
-has one job, create an [AngularJS] module (in the form of a file) out of an [SBT] task expression that returns a [JSON4S] `JValue`.
-It is up to the user to integrate this task as part of their build system
+has one job, create an [AngularJS] module (in the form of a file) out of an [SBT] task expression that returns a [JSON4S] `JValue`,
+nothing more. It is up to the user to integrate this task as part of their build system
 
 # Configuration
 
