@@ -45,7 +45,7 @@ val sbtAngularSeedSettings = Seq(
 Which would produce the following `seed.js` file
 
 ```javascript
-angular.module('angularSeed',[]);
+angular.module('angularSeed',[])
 .value('AngularSeed',
 {
   "json" : "is",

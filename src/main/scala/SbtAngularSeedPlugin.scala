@@ -23,7 +23,7 @@ object SbtAngularSeedPlugin extends Plugin {
     val angularName = (angularValueName in AngularSeed).value
 
 
-    val firstString = """angular.module('""" + moduleName + """',[]);""" + "\n"
+    val firstString = """angular.module('""" + moduleName + """',[])""" + "\n"
     val secondString = """.value('""" + angularName + """',""" + "\n"
     val main = json + "\n"
     val end = """);"""
