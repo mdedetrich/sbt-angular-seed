@@ -31,7 +31,7 @@ There is also the task `angularSeed`, which creates the seed file
 
 All of the tasks and keys are located in the `AngularSeed` config
 
-As an example, this is what a typical config may look like (`JsonDSL` is used to product the JSON, check [JSON4S] for more info)
+As an example, this is what a trivial config may look like (`JsonDSL` is used to product the JSON, check [JSON4S] for more info)
 
 ```scala
 val sbtAngularSeedSettings = Seq(
