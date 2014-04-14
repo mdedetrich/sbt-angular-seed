@@ -35,7 +35,7 @@ As an example, this is what a typical config may look like (`JsonDSL` is used to
 
 ```scala
 val sbtAngularSeedSettings = Seq(
-    targetFile in AngularSeed := sourcesDirectory (_ \ "js" \ "seed.js")
+    targetFile in AngularSeed := sourcesDirectory (_ \ "js" \ "seed.js"),
     jsonExpression in AngularSeed := {
         ("json" -> "is") ~ ("damn" -> "cool")
     }
