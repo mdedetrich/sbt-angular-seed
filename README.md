@@ -34,7 +34,7 @@ All of the tasks and keys are located in the `AngularSeed` config
 As an example, this is what a trivial config may look like (`JsonDSL` is used to product the JSON, check [JSON4S] for more info)
 
 ```scala
-val sbtAngularSeedSettings = Seq(
+val sbtAngularSeedSettings = SbtAngularSeedPlugin.defaultSettings ++ Seq(
     targetFile in AngularSeed <<= sourceDirectory (_ / "js" / "seed.js" ),
     jsonExpression in AngularSeed := {
         ("json" -> "is") ~ ("damn" -> "cool")
@@ -58,7 +58,7 @@ You would also probably want to make the `angularSeed` task to run when you do c
 can be done as follows
 
 ```scala
-(compile in Compile) <<= (compile in Compile) dependsOn (compileAngularSeed in AngularSeed)
+(compile in Compile) <<= (compile in Compile) dependsOn (compileSeed in AngularSeed)
 ```
 
 Of course, this example is trivial. The main use of this plugin is to create client
@@ -86,8 +86,8 @@ create plugins
 
 ## Tasks
 
-* compileAngularSeed: Creates the [AngularJS] seed file
-* cleanAngularSeed: Deletes the [AngularJS] seed file
+* compileSeed: Compiles the [AngularJS] seed file
+* clean: Deletes the [AngularJS] seed file
 
 
 [sbt-angular-seed]:https://github.com/mdedetrich/sbt-angular-seed

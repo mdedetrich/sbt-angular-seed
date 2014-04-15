@@ -6,7 +6,7 @@ object SbtAngularSeedBuild extends Build {
   lazy val sbtAngularSeed = Project("sbt-angular-seed",file("."),settings = Defaults.defaultSettings ++
     Seq(
       name := "sbt-angular-seed",
-      version := "1.0.0-SNAPSHOT",
+      version := "1.0.0",
       organization := "com.mdedetrich",
       scalaVersion := "2.10.3",
       sbtPlugin := true,
