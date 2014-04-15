@@ -17,10 +17,10 @@ object SbtAngularSeedPlugin extends Plugin {
 
   val compileSeed = TaskKey[Unit]("compileSeed","Compiles the AngularJS seed file")
 
-  lazy val compileSeedTask = Def.task {
-    val json = pretty(render((jsonExpression in AngularSeed).value))
-    val moduleName = (angularModuleName in AngularSeed).value
-    val angularName = (angularValueName in AngularSeed).value
+  val compileSeedTask = Def.task {
+    val json = pretty(render(jsonExpression.value))
+    val moduleName = angularModuleName.value
+    val angularName = angularValueName.value
 
 
     val firstString = """angular.module('""" + moduleName + """',[])""" + "\n"
@@ -31,13 +31,13 @@ object SbtAngularSeedPlugin extends Plugin {
     val finalString =
       firstString + secondString + main + end
 
-    IO.write((targetFile in AngularSeed).value,finalString)
+    IO.write(targetFile.value,finalString)
   }
 
   val clean = TaskKey[Unit]("clean","Deletes the AngularJS seed file")
 
   lazy val cleanTask = Def.task {
-    IO.delete((targetFile in AngularSeed).value)
+    IO.delete(targetFile.value)
   }
   lazy val defaultSettings: Seq[Setting[_]] = Seq(
     angularModuleName in AngularSeed := "angularSeed",
